@@ -1,0 +1,1 @@
+This is the development repo for a live map of OSHWA open source hardware [registrations](https://certification.oshwa.org/list.html).  It pulls from the [certification api](https://certificationapi.oshwa.org/documentation).  The map part is based off of the [Leaflet Choropleth Map tutorial](https://leafletjs.com/examples/choropleth/).
