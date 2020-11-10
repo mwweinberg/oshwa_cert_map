@@ -92,7 +92,7 @@ xhr.addEventListener("readystatechange", function() {
     //loads in the geojson
     var map_data_request = new XMLHttpRequest();
     map_data_request.open("GET", "/data/countries.geojson", false);
-    map_data_request.send(null)
+    map_data_request.send(null);
     var map_json = JSON.parse(map_data_request.responseText);
     console.log(map_json);
 
