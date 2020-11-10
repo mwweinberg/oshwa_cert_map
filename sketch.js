@@ -68,21 +68,7 @@ function combineJSONs(country_list, geo_json) {
 
   }
 
-//colors for the map and legend
-//low to high
-var color0 = "#f0f9e8";
-var color1 = "#bae4bc";
-var color2 = "#7bccc4";
-var color3 = "#43a2ca";
-var color4 = "#0868ac";
 
-//floors for the map and legend
-//low to high
-var cut0 = 1;
-var cut1 = 5;
-var cut2 = 10;
-var cut3 = 20;
-var cut4 = 50;
 
 
 var xhr = new XMLHttpRequest();
@@ -245,6 +231,3 @@ xhr.addEventListener("readystatechange", function() {
 xhr.open("GET", "https://certificationapi.oshwa.org/api/projects");
 xhr.setRequestHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTc0ZjEyNmU4NjcwMDAyYTdkY2JkYSIsImlhdCI6MTYwMzc1MTY5OCwiZXhwIjoxNjEyMzkxNjk4fQ.hPgWn9CnLkLVWfhl2TcI_Pbpgh6Sto1TI38aN3u-DaU");
 xhr.send();
-
-
-//console.log(data);
