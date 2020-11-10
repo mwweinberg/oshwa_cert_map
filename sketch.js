@@ -91,9 +91,11 @@ xhr.addEventListener("readystatechange", function() {
     //*********add generic geojson file*********
     //loads in the geojson
     var map_data_request = new XMLHttpRequest();
-    map_data_request.open("GET", "/data/countries.geojson", false);
+    map_data_request.open("GET", "./data/countries.geojson", false);
     map_data_request.send(null);
     var map_json = JSON.parse(map_data_request.responseText);
+
+
     console.log(map_json);
 
     //demo of how to access elements in geojson
