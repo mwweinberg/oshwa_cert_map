@@ -1,11 +1,28 @@
 function countCountry(input_json) {
+  //confirm it is running
+  console.log("countCountry is running");
+  console.log(input_json['items'][0]['oshwaUid']);
+  //TODO: the json you are getting back is not interable by entry
+  //var count = Object.keys(input_json).length;
+  var count = input_json.length;
+  console.log(count);
+  //for (var i = 0; i < count; i++)
+
+
+
   //create a temporary dictionary in the function
   function_country_counter = {};
   //loop through all of the entries
-  for (var i = 0; i < input_json.length; i++)
+  //.length wasn't working for unknown reasons, so you just hardcoded in a number
+  //for (var i = 0; i < input_json.length; i++)
+  //TODO: THIS WILL WORK IF YOU CAN FIGURE OUT THE .length ISSUE
+  for (var i = 0; i < 70; i++)
   {
-    console.log(input_json[i]["country"]);
-    var country = input_json[i]["country"];
+    console.log(input_json['items'][i]["country"]);
+    //var country = input_json[i]["country"];
+    var country = input_json['items'][i]['country'];
+    console.log("hi");
+    //data['items'][0]['oshwaUid']
 
     //this checks to see if the country is in the list
     let result = function_country_counter.hasOwnProperty(country);
@@ -79,7 +96,10 @@ xhr.addEventListener("readystatechange", function() {
     //this creates a JSON object that holds the data payload
     var data = JSON.parse(this.responseText);
     //this just prints something from the JSON to show that it works
-    console.log(data[0]["oshwaUid"]);
+    //console.log(data[0]["oshwaUid"]);
+    //console.log(data[1]["oshwaUid"]);
+    console.log(data['items'][0]['oshwaUid']);
+
 
     //runs the function to fill the country_counter dictionary
     var country_counter = countCountry(data);
@@ -231,5 +251,5 @@ xhr.addEventListener("readystatechange", function() {
   }
 });
 xhr.open("GET", "https://certificationapi.oshwa.org/api/projects");
-xhr.setRequestHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTc0ZjEyNmU4NjcwMDAyYTdkY2JkYSIsImlhdCI6MTYwMzc1MTY5OCwiZXhwIjoxNjEyMzkxNjk4fQ.hPgWn9CnLkLVWfhl2TcI_Pbpgh6Sto1TI38aN3u-DaU");
+xhr.setRequestHeader("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDAxNjBhNTY1N2M0MDAxODNjMGZlYSIsImlhdCI6MTcwNzQzMDQ5MiwiZXhwIjoxNzE2MDcwNDkyfQ.M3aL-9EOxtG9gviTdH_heXfBGMzU9rvaJCyh_sGaTzo");
 xhr.send();
